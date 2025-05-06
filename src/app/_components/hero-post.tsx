@@ -26,6 +26,9 @@ export function HeroPost({
               {title}
             </Link>
           </h3>
+          <div>
+          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+        </div>
         </div>
       </div>
     </section>

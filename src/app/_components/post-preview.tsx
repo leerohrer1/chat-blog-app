@@ -24,6 +24,7 @@ export function PostPreview({
           {title}
         </Link>
       </h3>
+      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
     </div>
   );
 }
