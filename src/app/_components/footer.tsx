@@ -25,7 +25,7 @@ export function Footer() {
               Email
             </a>
             <a
-              href="tel:636-233-0687"
+              href="tel:314-669-5331"
               rel="noopener noreferrer"
               className="text-2xl font-bold tracking-tighter mt-3 block text-neutral-900 dark:text-white hover:underline"
             >
