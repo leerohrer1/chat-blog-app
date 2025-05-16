@@ -10,8 +10,7 @@ export default function Index() {
 
   return (
     <main>
-      {/* ask matt if this works */}
-      <React.StrictMode> 
+      <React.StrictMode>
       <Container>
         <Intro />
         <ChatSection />
