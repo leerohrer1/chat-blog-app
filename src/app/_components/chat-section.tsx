@@ -1,24 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 import SearchBar from "./search-bar";
 import DisplaySuggestionTiles from "./suggestion-tiles";
+import { SuggestionTilesContext } from "../context/suggestion-tiles-context";
 
 export function ChatSection() {
-    const [tiles, setTiles] = useState([
-        "Lee is learning!",
-        "Should I eat or should I work more?",
-        "What is real?",
-        "Who is Tom?",
-        "What should some chat topics be?",
-        "This is nonsense, thanks for reading.",
-        "Is this short?",
-        "What about this one?"
-       ]);
+    const context = useContext(SuggestionTilesContext);
+    if (!context) throw new Error('Component must be wrapped in <SuggestionTilesProvider>');
+    const { suggestionTiles, setSuggestionTiles } = context;
 
-       const handleAddTile = (newTile: string) => {
+    const handleAddTile = (newTile: string) => {
         if (newTile.trim() !== "") {
-            setTiles([newTile, ...tiles]);
+            setSuggestionTiles([newTile, ...suggestionTiles]);
         }
     };
 
@@ -29,7 +23,7 @@ export function ChatSection() {
             </h2>
                 <SearchBar onSubmit={handleAddTile} />
                 <br />
-                <DisplaySuggestionTiles tiles={tiles} />
+                <DisplaySuggestionTiles />
                 <br />
         </section>
     );

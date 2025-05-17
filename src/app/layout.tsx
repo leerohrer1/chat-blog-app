@@ -6,6 +6,7 @@ import cn from "classnames";
 import { ThemeSwitcher } from "./_components/theme-switcher";
 
 import "./globals.css";
+import { SuggestionTilesProvider } from "./context/suggestion-tiles-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,7 +62,9 @@ export default function RootLayout({
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
         <ThemeSwitcher />
+        <SuggestionTilesProvider>
         <div className="min-h-screen">{children}</div>
+        </SuggestionTilesProvider>
         <Footer />
       </body>
     </html>
