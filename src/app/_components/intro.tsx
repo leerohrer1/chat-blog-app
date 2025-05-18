@@ -7,7 +7,7 @@ export function Intro() {
         Lee Rohrer
       </h1>
       <h4 className="text-center md:text-left text-xl md:text-3xl mt-5 md:pl-8">
-        Building software with curiosity, collaboration, and care.
+        Coding with curiosity, collaboration, and care.
       </h4>
     </section>
   );

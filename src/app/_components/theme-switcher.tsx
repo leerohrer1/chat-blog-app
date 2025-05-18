@@ -61,7 +61,7 @@ const Switch = () => {
     () =>
       ((typeof localStorage !== "undefined" &&
         localStorage.getItem(STORAGE_KEY)) ??
-        "system") as ColorSchemePreference,
+        "system") as ColorSchemePreference
   );
 
   useEffect(() => {
@@ -74,8 +74,10 @@ const Switch = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, mode);
-    updateDOM();
+    setTimeout(() => {
+      localStorage.setItem(STORAGE_KEY, mode);
+      updateDOM();
+    }, 200);
   }, [mode]);
 
   /** toggle mode */
