@@ -11,11 +11,11 @@ export default function Index() {
   return (
     <main>
       <React.StrictMode>
-      <Container>
-        <Intro />
-        <ChatSection />
-        <MoreStories posts={allPosts} />
-      </Container>
+        <Container>
+          <Intro />
+          <ChatSection />
+          <MoreStories posts={allPosts} />
+        </Container>
       </React.StrictMode>
     </main>
   );

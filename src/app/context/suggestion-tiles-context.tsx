@@ -26,10 +26,11 @@ export function SuggestionTilesProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [suggestionTiles, setSuggestionTiles] = useState(
-    JSON.parse(localStorage.getItem("suggestionTiles") ?? "null") ??
-      defaultSuggestionTiles
-  );
+  const [suggestionTiles, setSuggestionTiles] = useState<string[]>(() => {
+    if (typeof window === "undefined") return defaultSuggestionTiles;
+    const storedTiles = localStorage.getItem("suggestionTiles");
+    return storedTiles ? JSON.parse(storedTiles) : defaultSuggestionTiles;
+  });
 
   useEffect(() => {
     localStorage.setItem("suggestionTiles", JSON.stringify(suggestionTiles));

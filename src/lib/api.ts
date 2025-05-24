@@ -20,7 +20,6 @@ export function getPostBySlug(slug: string) {
 
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
+  const posts = slugs.map((slug) => getPostBySlug(slug));
   return posts;
 }
