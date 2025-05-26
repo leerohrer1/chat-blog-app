@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
 type SearchBarProps = {
     onSubmit: (text: string) => void;
@@ -11,7 +11,6 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
         e.preventDefault();
         onSubmit(input);
         setInput("");
-
     };
 
     return (

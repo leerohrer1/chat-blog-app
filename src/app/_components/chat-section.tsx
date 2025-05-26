@@ -31,7 +31,9 @@ export function ChatSection() {
         Chat
       </h2>
       <SearchBar onSubmit={handleSubmit} />
-      <Modal openModal={modalStatus} closeModal={handleClose} children={<Chat />} />
+      <Modal isOpen={modalStatus} closeModal={handleClose}>
+        <Chat />
+      </Modal>
       <br />
       <DisplaySuggestionTiles />
       <br />
